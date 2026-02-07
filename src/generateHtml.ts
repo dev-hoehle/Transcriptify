@@ -280,11 +280,11 @@ export async function generateHtml(transcript: ExportableTranscript, options: Tr
 	let html = buildHtmlDocument(content, transcriptData, clientCode);
 
 	try {
-		const appCssPath: string = path.join(process.cwd(), "src", "web", "index.css");
-		const highlightCssPath: string = path.join(process.cwd(), "src", "web", "highlight-theme.css");
+		const appCssPath: string = path.join(__dirname, "..", "src", "web", "index.css");
+		const highlightCssPath: string = path.join(__dirname, "..", "src", "web", "highlight-theme.css");
 		let appCss: string = await fs.readFile(appCssPath, "utf-8").catch(() => "");
 		let highlightCss: string = await fs.readFile(highlightCssPath, "utf-8").catch(() => "");
-		const highlightThemePath = path.join(process.cwd(), "node_modules", "highlight.js", "styles", "atom-one-dark.css");
+		const highlightThemePath = require.resolve("highlight.js/styles/atom-one-dark.css");
 		const highlightTheme = await fs.readFile(highlightThemePath, "utf-8").catch(() => "");
 		if (highlightTheme) {
 			highlightCss = highlightCss.replace(/@import\s+['"]highlight\.js\/styles\/atom-one-dark\.css['"];?/g, highlightTheme);
@@ -318,7 +318,7 @@ export async function generateHtml(transcript: ExportableTranscript, options: Tr
 
 async function bundleClientToString(): Promise<string> {
 	const result = await esbuild.build({
-		entryPoints: [path.join(process.cwd(), "src", "web", "client.tsx")],
+		entryPoints: [path.join(__dirname, "web", "client.js")],
 		bundle: true,
 		minify: true,
 		platform: "browser",

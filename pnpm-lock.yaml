@@ -14,6 +14,12 @@ importers:
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
+      esbuild:
+        specifier: ^0.27.2
+        version: 0.27.2
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -42,12 +48,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.23
         version: 10.4.23(postcss@8.5.6)
-      esbuild:
-        specifier: ^0.27.2
-        version: 0.27.2
-      highlight.js:
-        specifier: ^11.11.1
-        version: 11.11.1
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
