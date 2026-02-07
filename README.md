@@ -68,7 +68,7 @@ See the docs for a short usage guide and options: [docs/usage.md](https://github
 
 Preview:
 
-![preview](https://raw.githubusercontent.com/dev-hoehle/Transcriptify/refs/heads/main/docs/assets/preview.gif)
+![preview](https://raw.githubusercontent.com/dev-hoehle/transcriptify/refs/heads/main/docs/assets/preview.gif)
 
 ## Credits
 

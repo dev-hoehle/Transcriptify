@@ -1,9 +1,9 @@
 {
 	"name": "transcriptify",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Generate beautiful, secure HTML transcripts from Discord channels.",
 	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"types": "dist/transcript.d.ts",
 	"private": false,
 	"files": [
 		"dist"
