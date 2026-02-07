@@ -1,0 +1,71 @@
+@import "highlight.js/styles/atom-one-dark.css";
+.hljs {
+	background: #2b2d31 !important;
+	color: #dbdee1 !important;
+	padding: 0 !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+	color: #6d6f78;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+	color: #ff7b72;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+	color: #a5d6ff;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+	color: #ffa657;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+	color: #79c0ff;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+	color: #ffa657;
+}
+
+.hljs-built_in,
+.hljs-deletion {
+	color: #f85149;
+}
+
+.hljs-formula {
+	background: #2b2d31;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: 700;
+}
