@@ -16,7 +16,7 @@
 
 ## Quickstart
 
-Install (for local/dev usage):
+Install:
 
 ```bash
 npm i transcriptify

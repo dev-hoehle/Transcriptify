@@ -1,7 +1,5 @@
 import { useMemo } from "react";
 import { renderContent } from "../helpers/contentHelpers";
-import type { Attachment } from "../types/attachment";
-import type { ResolvedUsers } from "../types/message";
 import type { UseMessageContentParams } from "../types/props";
 
 export function useMessageContent({

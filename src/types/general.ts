@@ -117,3 +117,20 @@ export type TranscriptCreateOptions = {
 		guildBadges?: boolean;
 	};
 };
+
+export const defaultTranscriptCreateOptions: TranscriptCreateOptions = {
+	poweredBy: true,
+	allowThemeSwitching: true,
+	saveAssets: false,
+	ignore: {
+		bots: false,
+		userIDs: [],
+		attachments: {
+			images: false,
+			videos: false,
+			audio: false,
+			files: false
+		},
+		guildBadges: false
+	}
+};

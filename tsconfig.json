@@ -1,12 +1,37 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"target": "ES2022",
-		"module": "commonjs",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"skipLibCheck": true,
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
 		"strict": false,
+		"exactOptionalPropertyTypes": false,
+		"noUncheckedIndexedAccess": true,
+		"noPropertyAccessFromIndexSignature": false,
+		"noImplicitReturns": false,
+		"useUnknownInCatchVariables": true,
+		"noFallthroughCasesInSwitch": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"importHelpers": true,
+		"experimentalDecorators": true,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"types": ["node"],
+		"lib": ["ES2022"],
+		"newLine": "lf",
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
 		"jsx": "react-jsx"
-	}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["dist", "node_modules"]
 }

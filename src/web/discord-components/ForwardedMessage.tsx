@@ -6,7 +6,7 @@ import FileDocumentIcon from "./icons/FileDocumentIcon";
 import type { ForwardedMessageProps } from "../types/props";
 import { isImageUrl, getAttachmentKind, formatFileSize, extractFilenameFromUrl, isAudioUrl } from "./messageHelpers";
 
-export default function ForwardedMessage({ message, brokenImages, onImageError, renderContent, defaultAvatar }: ForwardedMessageProps) {
+export default function ForwardedMessage({ message, brokenImages, onImageError, renderContent }: ForwardedMessageProps) {
 	const getAttachmentIcon = (kind: string) => {
 		switch (kind) {
 			case "audio":

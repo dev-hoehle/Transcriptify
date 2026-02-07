@@ -1,8 +1,8 @@
-import { version, Collection, type Channel, type Message, type TextBasedChannel, type GuildMember, type User, type Client } from "discord.js";
-import { TranscriptCreateOptions } from "../types/general";
+import { Collection, type Channel, type Message, type TextBasedChannel, type User } from "discord.js";
+import { TranscriptCreateOptions } from "./types/general";
 import fs from "fs/promises";
 import path from "path";
-import type { ExportableTranscript, SerializableMessage } from "../types/exportableTranscript";
+import type { ExportableTranscript, SerializableMessage } from "./types/exportableTranscript";
 
 type GuildTag = { name?: string | null; iconUrl?: string | null };
 
@@ -165,7 +165,7 @@ export async function createTranscript(channel: TextBasedChannel, options: Trans
 	return generateFromMessages(channelMessages.reverse(), channel, options);
 }
 
-export async function generateFromMessages(messages: Message[] | Collection<string, Message>, channel: Channel, options: TranscriptCreateOptions = {}) {
+export async function generateFromMessages(messages: Message[] | Collection<string, Message>, channel: Channel, _options: TranscriptCreateOptions = {}) {
 	const transformedMessages = messages instanceof Collection ? Array.from(messages.values()) : messages;
 	const messagesSerialized = await Promise.all(transformedMessages.map((m) => mapMessageToSerializable(m)));
 

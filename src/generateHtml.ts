@@ -2,14 +2,14 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import fs from "fs/promises";
 import path from "path";
-import type { ExportableTranscript } from "../types/exportableTranscript";
+import type { ExportableTranscript } from "./types/exportableTranscript";
 import Transcript from "./web/discord-components/Transcript";
 import type { ChannelInfo } from "./web/types/channel";
 import type { TranscriptThemes } from "./web/types/theme";
 import type { TranscriptSSRProps } from "./web/types/props";
 import { AssetManager } from "./utils/assetManager";
 import esbuild from "esbuild";
-import { TranscriptCreateOptions } from "../types/general";
+import { TranscriptCreateOptions } from "./types/general";
 
 function TranscriptSSRWrapper(props: TranscriptSSRProps): React.ReactElement {
 	return React.createElement(Transcript, {
@@ -327,5 +327,5 @@ async function bundleClientToString(): Promise<string> {
 		jsx: "automatic"
 	});
 
-	return result.outputFiles[0].text;
+	return result?.outputFiles[0]?.text ?? "";
 }

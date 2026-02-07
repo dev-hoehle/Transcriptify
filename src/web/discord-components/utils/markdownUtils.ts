@@ -93,14 +93,14 @@ export function splitFencedCodeBlocks(input: string): Array<{ type: "text" | "co
 		const lineBreakIndex = fenceBody.indexOf("\n");
 		if (lineBreakIndex === -1) {
 			const lang = fenceBody.trim();
-			segments.push({ type: "code", value: "", lang: lang || undefined });
+			segments.push(lang ? { type: "code", value: "", lang } : { type: "code", value: "" });
 		} else if (fenceBody.startsWith("\n") || fenceBody.startsWith("\r\n")) {
 			const code = fenceBody.replace(/^\r?\n/, "");
 			segments.push({ type: "code", value: code });
 		} else {
 			const langLine = fenceBody.slice(0, lineBreakIndex).trim();
 			const code = fenceBody.slice(lineBreakIndex + 1);
-			segments.push({ type: "code", value: code, lang: langLine || undefined });
+			segments.push(langLine ? { type: "code", value: code, lang: langLine } : { type: "code", value: code });
 		}
 		idx = end + 3;
 	}

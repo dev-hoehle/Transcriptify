@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "./Button";
-import type { ButtonProps } from "../types/ui";
-import type { EmbedField, EmbedAuthor, EmbedFooter, EmbedProps } from "../types/embed";
+import type { EmbedProps } from "../types/embed";
 import { formatDate } from "./utils/date";
 import { parseMarkdown } from "./utils/markdown";
 import { sanitizeMarkdownString } from "./messageHelpers";

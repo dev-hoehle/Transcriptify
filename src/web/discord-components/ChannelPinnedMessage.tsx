@@ -1,4 +1,4 @@
-import React from "react";
+
 import type { MessageProps } from "../types/message";
 import PinIcon from "./icons/PinIcon";
 

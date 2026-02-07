@@ -146,7 +146,7 @@ export default function Message(props: MessageProps) {
 		if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
 	};
 
-	const dateObj = timestamp ? new Date(timestamp) : null;
+	const dateObj: Date = timestamp ? new Date(timestamp) : null;
 	let tagDate = dateObj ? formatDate(dateObj) : "";
 	let shortTime = dateObj ? formatTime(dateObj) : "";
 	tagDate = tagDate.replace(/\s+(AM|PM)$/, "\u00A0$1");
@@ -161,9 +161,9 @@ export default function Message(props: MessageProps) {
 			})()
 		: "";
 
-	const relativeTimestamp = dateObj ? timeAgo(dateObj) : "";
+	const relativeTimestamp: string = dateObj ? timeAgo(dateObj) : "";
 
-	const BOT_AVATAR = "https://raw.githubusercontent.com/dev-hoehle/Transcriptify/refs/heads/main/web/bot.png";
+	const BOT_AVATAR: string = "https://raw.githubusercontent.com/dev-hoehle/Transcriptify/refs/heads/main/web/bot.png";
 
 	const ensureKeys = (node: any, prefix: string): any => {
 		if (node === null || node === undefined) return node;
@@ -311,34 +311,7 @@ export default function Message(props: MessageProps) {
 		return rendered;
 	};
 
-	function renderSegmentWithEmojis(text: string): React.ReactNode[] {
-		const out: React.ReactNode[] = [];
-		const emojiRegex = /<(a)?:([^:>]+):(\d+)>/g;
-		let last = 0;
-		let m: RegExpExecArray | null;
-		let tsCallIndex = 0;
-		while ((m = emojiRegex.exec(text)) !== null) {
-			if (m.index > last) {
-				const part = text.substring(last, m.index);
-				out.push(...renderTextWithTimestamps(part, tsCallIndex++));
-			}
-			if (m.index > 0 && text[m.index - 1] === "\\") {
-				out.push(m[0].replace(/\\/g, ""));
-			} else {
-				const animated = !!m[1];
-				const name = m[2];
-				const id = m[3];
-				const token = m[0];
-				const src = emojiUrls && emojiUrls[token] ? emojiUrls[token] : buildEmojiCdnUrl(id, animated, 96) || "";
-				if (src) {
-					out.push(<img key={`e-${id}-${m.index}`} src={src} alt={name} className="inline h-6 w-6 align-text-bottom mr-0.5" />);
-				}
-			}
-			last = emojiRegex.lastIndex;
-		}
-		if (last < text.length) out.push(...renderTextWithTimestamps(text.substring(last), tsCallIndex++));
-		return React.Children.toArray(out);
-	}
+
 
 	function renderTextWithTimestamps(s: string, callIndex: number = 0): React.ReactNode[] {
 		const out: React.ReactNode[] = [];

@@ -645,42 +645,42 @@ function parseInline(text: string): React.ReactNode {
 			// ~~strike~~
 			nodes.push(
 				<s key={`st-${m.index}`} style={{ textDecoration: "line-through", opacity: 0.8 }}>
-					{parseInline(m[2])}
+					{parseInline(m[2] || "")}
 				</s>
 			);
 		} else if (m[3]) {
 			// **__bold+underline__** or __**__ combo
 			nodes.push(
 				<strong key={`bu-${m.index}`} style={{ fontWeight: 600 }}>
-					<u style={{ textDecoration: "underline" }}>{processLinks(m[4])}</u>
+					<u style={{ textDecoration: "underline" }}>{processLinks(m[4] || "")}</u>
 				</strong>
 			);
 		} else if (m[6]) {
 			// __underline__
 			nodes.push(
 				<u key={`u-${m.index}`} style={{ textDecoration: "underline", textDecorationThickness: "1px" }}>
-					{processLinks(m[6])}
+					{processLinks(m[6] || "")}
 				</u>
 			);
 		} else if (m[7]) {
 			// ***bold italic***
 			nodes.push(
 				<strong key={`bui-${m.index}`} style={{ fontWeight: 600 }}>
-					<em>{processLinks(m[8])}</em>
+					<em>{processLinks(m[8] || "")}</em>
 				</strong>
 			);
 		} else if (m[9]) {
 			// **bold**
 			nodes.push(
 				<strong key={`b-${m.index}`} style={{ fontWeight: 600 }}>
-					{processLinks(m[10])}
+					{processLinks(m[10] || "")}
 				</strong>
 			);
 		} else if (m[11]) {
 			// *italic*
 			nodes.push(
 				<em key={`i-${m.index}`} style={{ fontStyle: "italic" }}>
-					{processLinks(m[12])}
+					{processLinks(m[12] || "")}
 				</em>
 			);
 		}

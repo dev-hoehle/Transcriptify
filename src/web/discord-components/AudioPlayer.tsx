@@ -191,9 +191,11 @@ export default function AudioPlayer({ url, filename, filesize }: { url: string; 
 
 	const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (audioRef.current) {
-			audioRef.current.volume = parseFloat(e.target.value);
-		}
+	 		audioRef.current.volume = parseFloat(e.target.value);
+	 	}
 	};
+
+	void handleVolumeChange;
 
 	return (
 		<div className="w-full max-w-[520px] bg-[#1e1f22] border border-[#111214] rounded-lg p-4">

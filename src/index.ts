@@ -1,11 +1,15 @@
 import { version, Collection, type Channel, type Message, type TextBasedChannel } from "discord.js";
-import { TranscriptCreateOptions } from "../types/general";
+import type { TranscriptCreateOptions } from "./types/general";
 import { messageToSerializable } from "./utils/transformer";
 import { enrichPollVoters } from "./utils/polls";
 import { generateHtml } from "./generateHtml";
-import type { ExportableTranscript, SerializableMessage } from "../types/exportableTranscript";
+import type { ExportableTranscript, SerializableMessage } from "./types/exportableTranscript";
 
-const djsVersion: string = version.split(".")[0];
+export type { TranscriptCreateOptions } from "./types/general";
+export { defaultTranscriptCreateOptions } from "./types/general";
+
+
+const djsVersion: string = ((version || "").split(".")[0] || "");
 if (djsVersion !== "14" && djsVersion !== "15") {
 	console.error(`Unsupported discord.js version: ${version}. This library only supports v14 and v15 of discord.js.`);
 	process.exit(1);
@@ -56,6 +60,7 @@ export async function createTranscriptRaw(channel: TextBasedChannel, options: Tr
 	if (resolveLimit < channelMessages.length) channelMessages = channelMessages.slice(0, limit);
 	return channelMessages.reverse();
 }
+
 
 export async function generateFromMessages(
 	messages: Message[] | Collection<string, Message>,
@@ -118,7 +123,7 @@ export async function generateFromMessages(
 
 			roleMentionRegex.lastIndex = 0;
 			while ((match = roleMentionRegex.exec(allContent)) !== null) {
-				const roleId: string = match[1];
+				const roleId: string = match[1] as string;
 				if (resolvedRolesMap.has(roleId)) continue;
 
 				try {

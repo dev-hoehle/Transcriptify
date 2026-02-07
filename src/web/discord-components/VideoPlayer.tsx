@@ -100,7 +100,7 @@ export default function VideoPlayer({ url, filename, filesize }: { url: string; 
 	const startTouchDrag = (touch: any) => {
 		draggingRef.current = true;
 		handleVolPointer(touch.clientY);
-		const onTouchMove = (e: TouchEvent) => handleVolPointer(e.touches[0].clientY);
+		const onTouchMove = (e: TouchEvent) => handleVolPointer(e.touches[0]?.clientY || 0);
 		const onTouchEnd = () => {
 			draggingRef.current = false;
 			window.removeEventListener("touchmove", onTouchMove);

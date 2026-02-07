@@ -3,7 +3,7 @@ import { getGuildTagForUser, getColorForUser } from "./user";
 import { extractEmbeds, extractAttachments, extractStickers, extractReactions, extractComponents, extractInteraction } from "./extractors";
 import { extractPoll } from "./polls";
 import { buildSystemAuthor, extractForwarded } from "./authors";
-import type { SerializableMessage, SerializableAuthor } from "../../types/exportableTranscript";
+import type { SerializableMessage, SerializableAuthor } from "../types/exportableTranscript";
 
 export async function messageToSerializable(message: Message): Promise<{ message: SerializableMessage; author: SerializableAuthor | null } | null> {
 	if ((message as any).type === 24) return null;
