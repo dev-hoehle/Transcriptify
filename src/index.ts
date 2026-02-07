@@ -201,6 +201,7 @@ export async function generateFromMessages(
 	}
 
 	function messageHasVisibleContent(m: any): boolean {
+		if (m.messageType === 6 || m.messageType === 7) return true;
 		if (m.content && String(m.content).trim().length > 0) return true;
 		if (m.attachments && Array.isArray(m.attachments) && m.attachments.length > 0) return true;
 		if (m.stickers && Array.isArray(m.stickers) && m.stickers.length > 0) return true;

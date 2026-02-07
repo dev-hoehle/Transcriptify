@@ -1,6 +1,6 @@
 # `Transcriptify`
 
-[![npm](https://img.shields.io/npm/dw/Transcriptify)](http://npmjs.org/package/Transcriptify)
+[![npm](https://img.shields.io/npm/dw/transcriptify)](http://npmjs.org/package/transcriptify)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dev-hoehle/transcriptify)
 ![GitHub Repo stars](https://img.shields.io/github/stars/dev-hoehle/transcriptify?style=social)
 

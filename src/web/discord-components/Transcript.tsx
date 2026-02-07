@@ -246,7 +246,7 @@ export default function Transcript(props: TranscriptProps) {
 										onNavigateToMessage={handlePinnedMessageClick}
 										referencedMessage={
 											msg.messageType === 6
-												? pinnedMessages.find((m) => String(m.id) === String((msg as any).referencedMessageId))
+												? localMessages.find((m) => String(m.id) === String((msg as any).referencedMessageId))
 												: undefined
 										}
 									/>

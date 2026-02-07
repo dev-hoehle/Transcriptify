@@ -163,7 +163,7 @@ export default function Message(props: MessageProps) {
 
 	const relativeTimestamp = dateObj ? timeAgo(dateObj) : "";
 
-	const BOT_AVATAR = "/profile/bot.png";
+	const BOT_AVATAR = "https://raw.githubusercontent.com/dev-hoehle/Transcriptify/refs/heads/main/web/bot.png";
 
 	const ensureKeys = (node: any, prefix: string): any => {
 		if (node === null || node === undefined) return node;

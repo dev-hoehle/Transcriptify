@@ -7,7 +7,3 @@ export function buildAvatarUrl(userId: string, avatarHash: string): string {
 	const url = buildAvatarCdnUrl(userId, avatarHash);
 	return url || avatarHash;
 }
-
-export function getDefaultAvatar(): string {
-	return "/profile/bot.png";
-}

@@ -15,7 +15,7 @@ export default function StickerPreview({ st, size = 160, className = "", alt }: 
 				return;
 			}
 			const DEFAULT_STICKER_MAP: Record<string, string> = {
-				"751606379340365864": "/system/wave.gif"
+				"751606379340365864": "https://raw.githubusercontent.com/dev-hoehle/Transcriptify/refs/heads/main/web/wave.gif"
 			};
 			win.__stickerMap = win.__stickerMap || DEFAULT_STICKER_MAP;
 			const mapped = win.__stickerMap[id];
